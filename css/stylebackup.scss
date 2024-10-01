@@ -43,6 +43,10 @@
         background-color: $light-button-bg;
         color: $light-button-text;
     }
+
+    footer{
+        background-color: $light-header-bg;
+    }
     
 }
 
@@ -85,6 +89,10 @@
     #adiciona {
         background-color: $dark-button-bg;
         color: $dark-button-text;
+    }
+
+    footer{
+        background-color: $dark-header-bg;
     }
 }
 
@@ -240,9 +248,22 @@ main{
             }
         }
     }
+}
 
-
-      
+footer{
+    @include flexCenter();
+    flex-direction: column;
+    padding-top: 10px;
+    .membros{
+        @include flexCenter();
+        width: 100%;
+        padding: 10px 30px 10px 30px;
+        justify-content: space-around;
+        a{
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
 }
 
 .esconde{

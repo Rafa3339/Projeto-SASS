@@ -202,6 +202,9 @@ body #adiciona {
   background-color: #4bf899;
   color: #000000;
 }
+body footer {
+  background-color: #e6e6e6;
+}
 
 .theme-dark {
   background-color: #2a2a2a;
@@ -236,6 +239,9 @@ body #adiciona {
 .theme-dark #adiciona {
   background-color: #3269ff;
   color: #ffffff;
+}
+.theme-dark footer {
+  background-color: #1c1c1c;
 }
 
 header {
@@ -372,6 +378,26 @@ main .container .area-tarefas .tarefa2 {
   flex-wrap: wrap;
   text-align: center;
   width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 10px;
+}
+footer .membros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px 30px 10px 30px;
+  justify-content: space-around;
+}
+footer .membros a {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .esconde {
