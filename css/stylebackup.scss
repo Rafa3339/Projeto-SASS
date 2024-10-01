@@ -1,11 +1,112 @@
 @import './checkbox';
 @import './lista';
+@import './variaveis';
+@import './theme';
+@import './header';
+// Mixin para o tema claro
+@mixin light-theme {
+    background-color: $light-bg;
+    color: $light-text;
 
-*{
+    header {
+        background-color: $light-header-bg;
+        color: $light-text-header;
+        a{
+            color: $light-text-header-a;
+            &:hover{
+                text-shadow: $light-text-header-hover;
+            }
+        }
+    }
+    
+    
+    .container {
+        background-color: $light-container-bg;
+        border: 1px solid $light-border;
+        .area-tarefas{
+            .tarefa1{
+                background-color: $light-tarefa1-bg;
+            }
+            .tarefa2{
+                background-color: $light-tarefa2-bg;
+            }
+        }
+    }
+
+    .area-adicionar{
+        background-color: $light-adicionar;
+        button{
+            background-color: $light-button-bg;
+        }
+    }
+    #adiciona {
+        background-color: $light-button-bg;
+        color: $light-button-text;
+    }
+    
+}
+
+// Mixin para o tema escuro
+@mixin dark-theme {
+    background-color: $dark-bg;
+    color: $dark-text;
+
+    header {
+        background-color: $dark-header-bg;
+        color: $dark-text-header;
+        a{
+            color: $dark-text-header-a;
+            &:hover{
+                text-shadow: $dark-text-header-hover;
+            }
+        }
+    }
+    
+    .container {
+        background-color: $dark-container-bg;
+        border: 1px solid $dark-border;
+        .area-tarefas{
+            .tarefa1{
+                background-color: $dark-tarefa1-bg;
+            }
+            .tarefa2{
+                background-color: $dark-tarefa2-bg;
+            }
+        }
+    }
+
+    .area-adicionar{
+        background-color: $dark-adicionar;
+        button{
+            background-color: $dark-button-bg;
+        }
+    }
+
+    #adiciona {
+        background-color: $dark-button-bg;
+        color: $dark-button-text;
+    }
+}
+
+// Estilos globais
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    @include light-theme; // Começa com o tema claro
+    min-height: 100vh;
+
+    // Outros estilos...
+}
+
+.theme-dark {
+    @include dark-theme;
+}
+
+// Outros estilos...
 
 @mixin flexCenter(){
     display: flex;
@@ -15,16 +116,11 @@
 
 header{
     @include flexCenter();
-    justify-content: space-around;
-    background-color: rgb(252, 249, 79);
+    padding: 0 80px 0 40px;
+    width: 100%;
     height: 75px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     a{
         text-decoration: none;
-        color: rgb(118, 255, 255);
-        &:hover{
-            color: aqua;
-        }
     }
     p{
       font-size: 20px;
@@ -32,11 +128,10 @@ header{
     
 }
 main{
-    @include  flexCenter();
+    @include flexCenter();
     justify-content: space-around;
     flex-direction: column;
     min-height: 80vh;
-    background-color: beige;
     padding: 30px;
 
     .adicionar{
@@ -47,10 +142,9 @@ main{
             width: 150px;
             height: 60px;
             font-weight: bold;
-            border: 3px  solid rgb(111, 165, 30);
-            background-color: greenyellow;
+            border: 2px  solid rgb(0, 0, 0);
             border-radius: 10px;
-            transition: transform 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
             &:hover{
                 transform: scale(1.05);
                 cursor: pointer;
@@ -63,7 +157,6 @@ main{
 
     .container{ //depois colocar display flex
         flex-wrap: wrap;
-        background-color: red;
         padding: 25px;
         width: 85%;
         border-radius: 30px;
@@ -79,7 +172,6 @@ main{
             width: 500px;
             height: 350px;
             border-radius: 20px;
-            background-color: palevioletred;
             opacity: 0.9;
             z-index: 1000;
 
@@ -93,8 +185,6 @@ main{
                 }
             }
             #enviar{
-                background-color: greenyellow;
-                color: black;
                 padding: 10px 20px;
                 font-size: 18px;
                 border-radius: 8px;
@@ -102,11 +192,9 @@ main{
                 transition: background-color 0.3s, transform 0.3s;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
                 &:hover{
-                    background-color: rgb(150, 219, 45);
                     transform: translateY(-2px);
                 }
                 &:active{
-                    background-color: rgb(111, 165, 30);
                     transform: translateY(1px);
                 }
             }
@@ -119,7 +207,6 @@ main{
             justify-content: space-between;
             text-align: start;
             align-items: center;
-            background-color: aqua;
             padding: 3px;
             .abas{
                 @include flexCenter();
@@ -132,27 +219,24 @@ main{
         .area-tarefas{
             width: 100%;
             height: calc(100% - 30px);
-            background-color: blue;
             .abas{
                 @include flexCenter();
                 min-height: 40px;
                 border-right: 1px solid black; // se o tamanho de uma aba for maior que das outras a linha fica bugada
             }                                    // resolver com clientHeight ou offsetHeight no JS
             .tarefa1{
-                @include  flexCenter();
+                @include flexCenter();
                 padding: 0 3px 0 3px;
                 flex-wrap: wrap; // include para isso
                 text-align: center;
                 width: 100%; //
-                background-color: purple;
             }
             .tarefa2{
-                @include  flexCenter();
+                @include flexCenter();
                 padding: 0 3px 0 3px;
                 flex-wrap: wrap; // include para isso
                 text-align: center;
                 width: 100%; //
-                background-color: pink;
             }
         }
     }
