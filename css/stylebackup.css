@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #333333;
+}
+body.light .task {
+  background-color: #f1f1f1;
+}
+
+body.dark {
+  background-color: #333333;
+  color: #ffffff;
+}
+body.dark .task {
+  background-color: #555555;
+}
+
+button {
+  padding: 10px;
+  margin-top: 10px;
+}/*# sourceMappingURL=stylebackup.css.map */

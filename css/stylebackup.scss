@@ -1,0 +1,47 @@
+// Variáveis para os temas
+$theme-light: (
+  background: #ffffff,
+  text-color: #333333,
+  task-background: #f1f1f1
+);
+
+$theme-dark: (
+  background: #333333,
+  text-color: #ffffff,
+  task-background: #555555
+);
+
+// Mixin para aplicar o tema
+@mixin theme($theme) {
+  background-color: map-get($theme, background);
+  color: map-get($theme, text-color);
+  
+  .task {
+    background-color: map-get($theme, task-background);
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+// Tema claro por padrão
+body.light {
+  @include theme($theme-light);
+}
+
+body.dark {
+  @include theme($theme-dark);
+}
+
+button {
+  padding: 10px;
+  margin-top: 10px;
+}
+
