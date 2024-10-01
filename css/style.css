@@ -128,13 +128,20 @@ main .container .area-tarefas {
   height: calc(100% - 30px);
   background-color: blue;
 }
+main .container .area-tarefas .abas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  border-right: 1px solid black;
+}
 main .container .area-tarefas .tarefa1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 10px 0 10px;
   flex-wrap: wrap;
   text-align: center;
-  padding: 10px;
   width: 100%;
   background-color: purple;
 }
@@ -142,9 +149,9 @@ main .container .area-tarefas .tarefa2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 10px 0 10px;
   flex-wrap: wrap;
   text-align: center;
-  padding: 10px;
   width: 100%;
   background-color: pink;
 }/*# sourceMappingURL=style.css.map */
