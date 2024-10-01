@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function carregarTarefas() {
         const tarefasSalvas = JSON.parse(localStorage.getItem('tarefas')) || [];
         tarefasSalvas.forEach(tarefa => {
-            adicionarTarefa(tarefa.tarefa, tarefa.data, tarefa.descricao, tarefa.anotacoes, false);
+            adicionarTarefa(tarefa.tarefa, tarefa.data, tarefa.descricao, tarefa.anotacoes, tarefa.concluida, false);
         });
     }
 
@@ -39,11 +39,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 tarefa: tarefa.querySelector('.tarefa p').textContent,
                 data: tarefa.querySelector('.data p').textContent.split('/').reverse().join('-'),
                 descricao: tarefa.querySelector('.descricao p').textContent,
-                anotacoes: tarefa.querySelector('.anota p').textContent
+                anotacoes: tarefa.querySelector('.anota p').textContent,
+                concluida: tarefa.querySelector('.checked').checked // Salvar se a tarefa está concluída
             };
         });
         localStorage.setItem('tarefas', JSON.stringify(tarefas));
     }
+    
 
     // Mostrar/Esconder área de adicionar tarefa
     botaoAdicionar.addEventListener('click', () => {
@@ -64,25 +66,22 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Função para adicionar uma tarefa
-    function adicionarTarefa(tarefa, data, descricao, anotacoes, salvar = true) {
+    function adicionarTarefa(tarefa, data, descricao, anotacoes, concluida = false, salvar = true) {
         let novaTarefa;
-
-        // Se houver tarefas modelo disponíveis
+    
         if (tarefasUsadas < tarefasModelo.length) {
             novaTarefa = tarefasModelo[tarefasUsadas];
             tarefasUsadas++;
-            novaTarefa.classList.remove('modelo'); // Remover a classe 'modelo' quando a tarefa for usada
+            novaTarefa.classList.remove('modelo');
         } else {
-            // Caso não haja mais tarefas modelo, criamos uma nova
             novaTarefa = document.createElement('div');
             document.querySelector('.area-tarefas').appendChild(novaTarefa);
         }
-
-        // Atualizando os dados da tarefa
+    
         novaTarefa.innerHTML = `
             <div class="abas check">
                 <label class="marcado">
-                    <input class="checked" type="checkbox">
+                    <input class="checked" type="checkbox" ${concluida ? 'checked' : ''}>
                     <div class="checkmark"></div>
                 </label>
             </div>
@@ -92,19 +91,21 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="abas anota"><p>${anotacoes}</p></div>
             <div class="lixo"><button><img src="images/trash.png" alt="Remover" width="20px"></button></div>
         `;
-
-        // Adicionar função para remover a tarefa
+    
         const botaoRemover = novaTarefa.querySelector('.lixo button');
         botaoRemover.addEventListener('click', () => {
             novaTarefa.remove();
-            reorganizarTarefas(); // Reorganizar as tarefas após remover uma
-            salvarTarefas(); // Atualizar localStorage após remover uma tarefa
+            reorganizarTarefas();
+            salvarTarefas();
         });
-
-        reorganizarTarefas(); // Reorganizar as tarefas após adicionar uma nova
-
+    
+        const checkbox = novaTarefa.querySelector('.checked');
+        checkbox.addEventListener('change', salvarTarefas); // Salvar alterações quando a tarefa for marcada ou desmarcada
+    
+        reorganizarTarefas();
+    
         if (salvar) {
-            salvarTarefas(); // Salvar tarefas no localStorage
+            salvarTarefas();
         }
     }
 
