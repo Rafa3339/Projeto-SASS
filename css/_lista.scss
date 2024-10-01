@@ -6,11 +6,29 @@
     overflow: hidden;
 }
 .data{
-    flex: 4;
+    flex: 3;
 }
-.status{
-    flex: 7;
+.descricao{
+    flex: 8;
 }
 .anota{
-    flex: 9;
+    flex: 8;
+}
+.lixo{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+        background-color: transparent;
+        border: none;
+        transition: transform 0.3s ease;
+        &:hover{
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+        &:active{
+            transform: scale(0.9);
+        }
+    }
 }

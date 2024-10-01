@@ -17,14 +17,14 @@
   position: relative;
   top: 0;
   left: 0;
-  height: 1.3em;
-  width: 1.3em;
+  height: 1.1em;
+  width: 1.1em;
   background: #606062;
   border-radius: 5px;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3), 0px 1px 1px;
 }
 .marcado input:checked + .checkmark {
-  background-image: linear-gradient(#b9e9b3, #a8e4a0);
+  background-image: linear-gradient(#b9e9b3, #55d644);
 }
 .marcado .checkmark:after {
   content: "";
@@ -33,8 +33,8 @@
 }
 .marcado input:checked + .checkmark:after {
   display: block;
-  left: 0.45em;
-  top: 0.25em;
+  left: 0.35em;
+  top: 0.18em;
   width: 0.25em;
   height: 0.5em;
   border: solid white;
@@ -52,15 +52,34 @@
 }
 
 .data {
-  flex: 4;
+  flex: 3;
 }
 
-.status {
-  flex: 7;
+.descricao {
+  flex: 8;
 }
 
 .anota {
-  flex: 9;
+  flex: 8;
+}
+
+.lixo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lixo button {
+  background-color: transparent;
+  border: none;
+  transition: transform 0.3s ease;
+}
+.lixo button:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.lixo button:active {
+  transform: scale(0.9);
 }
 
 * {
@@ -93,19 +112,85 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  justify-content: space-around;
+  flex-direction: column;
+  min-height: 80vh;
   background-color: beige;
   padding: 30px;
 }
-main .container {
+main .adicionar {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100px;
+}
+main .adicionar #adiciona {
+  width: 150px;
+  height: 60px;
+  font-weight: bold;
+  border: 3px solid rgb(111, 165, 30);
+  background-color: greenyellow;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+main .adicionar #adiciona:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+main .adicionar #adiciona:active {
+  transform: scale(0.9);
+}
+main .container {
   flex-wrap: wrap;
   background-color: red;
   padding: 25px;
-  width: 80%;
+  width: 85%;
   border-radius: 30px;
 }
-main .container .descricao {
+main .container .area-adicionar {
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 350px;
+  border-radius: 20px;
+  background-color: palevioletred;
+  opacity: 0.9;
+  z-index: 1000;
+}
+main .container .area-adicionar .entrada {
+  width: 85%;
+}
+main .container .area-adicionar .entrada input {
+  width: 100%;
+  border: 2px solid #ccc; /* Cor da borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  font-size: 16px;
+}
+main .container .area-adicionar #enviar {
+  background-color: greenyellow;
+  color: black;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+main .container .area-adicionar #enviar:hover {
+  background-color: rgb(150, 219, 45);
+  transform: translateY(-2px);
+}
+main .container .area-adicionar #enviar:active {
+  background-color: rgb(111, 165, 30);
+  transform: translateY(1px);
+}
+main .container .tabela {
   display: flex;
   height: 30px;
   width: 100%;
@@ -113,9 +198,9 @@ main .container .descricao {
   text-align: start;
   align-items: center;
   background-color: aqua;
-  padding: 10px;
+  padding: 3px;
 }
-main .container .descricao .abas {
+main .container .tabela .abas {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -139,7 +224,7 @@ main .container .area-tarefas .tarefa1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 10px 0 10px;
+  padding: 0 3px 0 3px;
   flex-wrap: wrap;
   text-align: center;
   width: 100%;
@@ -149,9 +234,17 @@ main .container .area-tarefas .tarefa2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 10px 0 10px;
+  padding: 0 3px 0 3px;
   flex-wrap: wrap;
   text-align: center;
   width: 100%;
   background-color: pink;
+}
+
+.esconde {
+  display: none;
+}
+
+.aparece {
+  display: flex;
 }/*# sourceMappingURL=style.css.map */

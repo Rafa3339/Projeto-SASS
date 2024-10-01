@@ -16,15 +16,15 @@
         position: relative;
         top: 0;
         left: 0;
-        height: 1.3em;
-        width: 1.3em;
+        height: 1.1em;
+        width: 1.1em;
         background: #606062;
         border-radius: 5px;
         box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.30), 0px 1px 1px;
     }
 
     input:checked + .checkmark {
-        background-image: linear-gradient(#b9e9b3, #a8e4a0);
+        background-image: linear-gradient(#b9e9b3, #55d644);
     }
 
     .checkmark:after {
@@ -35,12 +35,12 @@
 
     input:checked + .checkmark:after {
         display: block;
-        left: 0.45em;
-        top: 0.25em;    
+        left: 0.35em;
+        top: 0.18em;    
         width: 0.25em;
         height: 0.5em;
         border: solid white;
-        border-width: 0 0.15em 0.15em 0;
+        border-width: 0 0.15em 0.15em 0;    
         transform: rotate(45deg);
     }
 }

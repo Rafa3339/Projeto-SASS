@@ -13,8 +13,28 @@
         <p>Data:<span id="data-atual"></span></p>
     </header>
     <main>
-        <div class="container"> <!-- https://uiverse.io/hannahyockel/young-termite-87 button "remover" -->
-            <div class="descricao">
+        <div class="adicionar"><button id="adiciona"><h3>Adicionar Tarefa</h3></button></div>
+        <div class="container">
+            <div class="area-adicionar esconde">
+                <div class="entrada">
+                    <label for="tarefa">Tarefa:</label>
+                    <input type="text" id="tarefa" name="tarefa" placeholder="Escreva a sua tarefa">
+                </div>
+                <div class="entrada">
+                    <label for="data">Selecione uma data:</label>
+                    <input type="date" id="data" name="data">
+                </div>
+                <div class="entrada">
+                    <label for="descri">Descrição:</label>
+                    <input type="text" id="descri" name="descri" placeholder="Descrição da tarefa">
+                </div>
+                <div class="entrada">
+                    <label for="anota">Anotações:</label>
+                    <input type="text" id="anota" name="anota" placeholder="Anotações da tarefa">
+                </div>
+                <button id="enviar">Adicionar</button>
+            </div>
+            <div class="tabela">
                 <div class="abas check">
                     <label class="marcado">
                         <input checked="checked" type="checkbox" disabled>
@@ -23,105 +43,114 @@
                 </div>
                 <div class="abas tarefa"><p>Tarefas</p></div>
                 <div class="abas data"><p>Data</p></div>
-                <div class="abas status"><p>Status</p></div>
+                <div class="abas descricao"><p>Descrição</p></div>
                 <div class="abas anota"><p>Anotações</p></div>
+                <div class="lixo"><button><img src="images/trash.png" alt="Remover" width="20px"></button></div>
             </div>
-            <div class="area-tarefas">
+            <div class="area-tarefas"> <!-- Esconde -->
                 <div class="tarefa1">
                     <div class="abas check">
                     <label class="marcado">
-                        <input checked="checked" type="checkbox">
+                        <input class="checked" type="checkbox">
                         <div class="checkmark"></div>
                     </label>
                     </div>
-                    <div class="abas tarefa"><p>Tarefa Tarefa Tarefa Tarefa Tarefa Tarefa Tarefa Tarefa Tarefa Tarefa Tarefa Tarefa Tarefa Tarefa Tarefa Tarefa Tarefa </p></div>
-                    <div class="abas data"><p>Data</p></div>
-                    <div class="abas status"><p>Status</p></div>
+                    <div class="abas tarefa"><p>Tarefa</p></div>
+                    <div class="abas data"><p>dd/mm/aaaa</p></div>
+                    <div class="abas descricao"><p>Descrição</p></div>
                     <div class="abas anota"><p>Anotações</p></div>
+                    <div class="lixo"><button><img src="images/trash.png" alt="Remover" width="20px"></button></div>
                 </div>
                 <div class="tarefa2">
                     <div class="abas check">
                     <label class="marcado">
-                        <input checked="checked" type="checkbox">
+                        <input class="checked" type="checkbox">
                         <div class="checkmark"></div>
                     </label>
                     </div>
                     <div class="abas tarefa"><p>Tarefa</p></div>
-                    <div class="abas data"><p>Data</p></div>
-                    <div class="abas status"><p>Status</p></div>
+                    <div class="abas data"><p>dd/mm/aaaa</p></div>
+                    <div class="abas descricao"><p>Descrição</p></div>
                     <div class="abas anota"><p>Anotações</p></div>
+                    <div class="lixo"><button><img src="images/trash.png" alt="Remover" width="20px"></button></div>
                 </div>
                 <div class="tarefa1">
                     <div class="abas check">
                     <label class="marcado">
-                        <input checked="checked" type="checkbox">
+                        <input class="checked" type="checkbox">
                         <div class="checkmark"></div>
                     </label>
                     </div>
                     <div class="abas tarefa"><p>Tarefa</p></div>
-                    <div class="abas data"><p>Data</p></div>
-                    <div class="abas status"><p>Status</p></div>
+                    <div class="abas data"><p>dd/mm/aaaa</p></div>
+                    <div class="abas descricao"><p>Descrição</p></div>
                     <div class="abas anota"><p>Anotações</p></div>
+                    <div class="lixo"><button><img src="images/trash.png" alt="Remover" width="20px"></button></div>
                 </div>
                 <div class="tarefa2">
                     <div class="abas check">
                     <label class="marcado">
-                        <input checked="checked" type="checkbox">
+                        <input class="checked" type="checkbox">
                         <div class="checkmark"></div>
                     </label>
                     </div>
                     <div class="abas tarefa"><p>Tarefa</p></div>
-                    <div class="abas data"><p>Data</p></div>
-                    <div class="abas status"><p>Status</p></div>
+                    <div class="abas data"><p>dd/mm/aaaa</p></div>
+                    <div class="abas descricao"><p>Descrição</p></div>
                     <div class="abas anota"><p>Anotações</p></div>
+                    <div class="lixo"><button><img src="images/trash.png" alt="Remover" width="20px"></button></div>
                 </div>
                 <div class="tarefa1">
                     <div class="abas check">
                     <label class="marcado">
-                        <input checked="checked" type="checkbox">
+                        <input class="checked" type="checkbox">
                         <div class="checkmark"></div>
                     </label>
                     </div>
                     <div class="abas tarefa"><p>Tarefa</p></div>
-                    <div class="abas data"><p>Data</p></div>
-                    <div class="abas status"><p>Status</p></div>
+                    <div class="abas data"><p>dd/mm/aaaa</p></div>
+                    <div class="abas descricao"><p>Descrição</p></div>
                     <div class="abas anota"><p>Anotações</p></div>
+                    <div class="lixo"><button><img src="images/trash.png" alt="Remover" width="20px"></button></div>
                 </div>
                 <div class="tarefa2">
                     <div class="abas check">
                     <label class="marcado">
-                        <input checked="checked" type="checkbox">
+                        <input class="checked" type="checkbox">
                         <div class="checkmark"></div>
                     </label>
                     </div>
                     <div class="abas tarefa"><p>Tarefa</p></div>
-                    <div class="abas data"><p>Data</p></div>
-                    <div class="abas status"><p>Status</p></div>
+                    <div class="abas data"><p>dd/mm/aaaa</p></div>
+                    <div class="abas descricao"><p>Descrição</p></div>
                     <div class="abas anota"><p>Anotações</p></div>
+                    <div class="lixo"><button><img src="images/trash.png" alt="Remover" width="20px"></button></div>
                 </div>
                 <div class="tarefa1">
                     <div class="abas check">
                     <label class="marcado">
-                        <input checked="checked" type="checkbox">
+                        <input class="checked" type="checkbox">
                         <div class="checkmark"></div>
                     </label>
                     </div>
                     <div class="abas tarefa"><p>Tarefa</p></div>
-                    <div class="abas data"><p>Data</p></div>
-                    <div class="abas status"><p>Status</p></div>
+                    <div class="abas data"><p>dd/mm/aaaa</p></div>
+                    <div class="abas descricao"><p>Descrição</p></div>
                     <div class="abas anota"><p>Anotações</p></div>
+                    <div class="lixo"><button><img src="images/trash.png" alt="Remover" width="20px"></button></div>
                 </div>
                 <div class="tarefa2">
                     <div class="abas check">
                     <label class="marcado">
-                        <input checked="checked" type="checkbox">
+                        <input class="checked" type="checkbox">
                         <div class="checkmark"></div>
                     </label>
                     </div>
                     <div class="abas tarefa"><p>Tarefa</p></div>
-                    <div class="abas data"><p>Data</p></div>
-                    <div class="abas status"><p>Status</p></div>
+                    <div class="abas data"><p>dd/mm/aaaa</p></div>
+                    <div class="abas descricao"><p>Descrição</p></div>
                     <div class="abas anota"><p>Anotações</p></div>
+                    <div class="lixo"><button><img src="images/trash.png" alt="Remover" width="20px"></button></div>
                 </div>
             </div>
         </div>
