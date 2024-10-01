@@ -1,47 +1,170 @@
-// Variáveis para os temas
-$theme-light: (
-  background: #ffffff,
-  text-color: #333333,
-  task-background: #f1f1f1
-);
+@import './checkbox';
+@import './lista';
 
-$theme-dark: (
-  background: #333333,
-  text-color: #ffffff,
-  task-background: #555555
-);
-
-// Mixin para aplicar o tema
-@mixin theme($theme) {
-  background-color: map-get($theme, background);
-  color: map-get($theme, text-color);
-  
-  .task {
-    background-color: map-get($theme, task-background);
-  }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
+@mixin flexCenter(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.app {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
+header{
+    @include flexCenter();
+    justify-content: space-around;
+    background-color: rgb(252, 249, 79);
+    height: 75px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    a{
+        text-decoration: none;
+        color: rgb(118, 255, 255);
+        &:hover{
+            color: aqua;
+        }
+    }
+    p{
+      font-size: 20px;
+    }
+    
+}
+main{
+    @include  flexCenter();
+    justify-content: space-around;
+    flex-direction: column;
+    min-height: 80vh;
+    background-color: beige;
+    padding: 30px;
+
+    .adicionar{
+        @include flexCenter();
+        width: 80%;
+        height: 100px;
+        #adiciona{
+            width: 150px;
+            height: 60px;
+            font-weight: bold;
+            border: 3px  solid rgb(111, 165, 30);
+            background-color: greenyellow;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            &:hover{
+                transform: scale(1.05);
+                cursor: pointer;
+            }
+            &:active{
+                transform: scale(0.9);
+            }
+        }
+    }
+
+    .container{ //depois colocar display flex
+        flex-wrap: wrap;
+        background-color: red;
+        padding: 25px;
+        width: 85%;
+        border-radius: 30px;
+
+        .area-adicionar{
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-evenly;
+            position: absolute;
+            top: 34%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 350px;
+            border-radius: 20px;
+            background-color: palevioletred;
+            opacity: 0.9;
+            z-index: 1000;
+
+            .entrada{
+                width: 85%;
+                input{
+                    width: 100%;
+                    border: 2px solid #ccc; /* Cor da borda */
+                    border-radius: 5px; /* Bordas arredondadas */
+                    font-size: 16px;
+                }
+            }
+            #enviar{
+                background-color: greenyellow;
+                color: black;
+                padding: 10px 20px;
+                font-size: 18px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s, transform 0.3s;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+                &:hover{
+                    background-color: rgb(150, 219, 45);
+                    transform: translateY(-2px);
+                }
+                &:active{
+                    background-color: rgb(111, 165, 30);
+                    transform: translateY(1px);
+                }
+            }
+        }
+
+        .tabela{
+            display: flex;
+            height: 30px;
+            width: 100%;
+            justify-content: space-between;
+            text-align: start;
+            align-items: center;
+            background-color: aqua;
+            padding: 3px;
+            .abas{
+                @include flexCenter();
+                height: 30px;
+                width: 100px;
+                border-right: 1px solid black;
+            }
+            
+        }
+        .area-tarefas{
+            width: 100%;
+            height: calc(100% - 30px);
+            background-color: blue;
+            .abas{
+                @include flexCenter();
+                min-height: 40px;
+                border-right: 1px solid black; // se o tamanho de uma aba for maior que das outras a linha fica bugada
+            }                                    // resolver com clientHeight ou offsetHeight no JS
+            .tarefa1{
+                @include  flexCenter();
+                padding: 0 3px 0 3px;
+                flex-wrap: wrap; // include para isso
+                text-align: center;
+                width: 100%; //
+                background-color: purple;
+            }
+            .tarefa2{
+                @include  flexCenter();
+                padding: 0 3px 0 3px;
+                flex-wrap: wrap; // include para isso
+                text-align: center;
+                width: 100%; //
+                background-color: pink;
+            }
+        }
+    }
+
+
+      
 }
 
-// Tema claro por padrão
-body.light {
-  @include theme($theme-light);
+.esconde{
+    display: none;
 }
 
-body.dark {
-  @include theme($theme-dark);
+.aparece {
+    display: flex;
 }
-
-button {
-  padding: 10px;
-  margin-top: 10px;
-}
-

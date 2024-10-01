@@ -1,0 +1,16 @@
+.header1 {
+    flex: 1;
+}
+.header2 {
+    flex: 10;
+    text-align: end;
+}
+.header3 {
+    flex: 4;
+    text-align: end;
+}
+.header4 {
+    flex: 2;
+    display: flex;
+    justify-content: flex-end;
+}
