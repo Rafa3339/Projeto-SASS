@@ -14,3 +14,5 @@
 ![Imagem de exemplo](images/Capturar.PNG) ![Imagem de exemplo](images/Capturar1.PNG) 
 - A função de adicionar tarefas e a troca dos seus temas.
 ![Imagem de exemplo](images/Capturar2.PNG) ![Imagem de exemplo](images/Capturar3.PNG)
+- A função de marcar como conlcuida e a de remover tarefa
+![Imagem de exemplo](images/Capturar4.PNG) ![Imagem de exemplo](images/Capturar5.PNG)
