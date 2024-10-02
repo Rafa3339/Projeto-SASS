@@ -11,13 +11,34 @@
 @import './theme';
 @import './header';
 
-// O mixin é como uma função pronta com propriedades que pode ser chamada depois (148)
-// o mixin aceita parametros
+// O mixin é como uma função pronta com propriedades que pode ser chamada depois (170)
 @mixin flexCenter(){
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+/*
+    O mixin aceita parâmetros
+@mixin comParametro($cor, $altura) {
+    background-color: $cor;;
+    height: $altura;
+}
+header{
+    @include comParametro(#FFF, 100vh);
+
+    Função extend
+header{
+    @include flexCenter();
+    background-color: red;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+}
+main{
+    @extend header;
+}
+*/
 
 // Esse mixin serve para agrupar propriedades para trocar o tema da página no javascript
 @mixin light-theme {
@@ -28,15 +49,15 @@
     header {
         background-color: $light-header-bg;
         color: $light-text-header;
-        a{
+        // Nesting (agrupamenhto ou aninhamento)
+        a {
             color: $light-text-header-a;
-            // Nesting (agrupamenhto ou aninhamento)
-            // Serve também para os pseudo-elementos do css
-            // Que estilizam partes especificas do elemento, como:
-            // &::before que adiciona algo antes do elemento, neste caso antes do header
             &:hover{
                 text-shadow: $light-text-header-hover;
             }
+            // Serve também para os pseudo-elementos do css
+            // Que estilizam partes especificas do elemento, como:
+            // &::before{} que adiciona algo antes do elemento, neste caso antes do a
         }
     }
     
