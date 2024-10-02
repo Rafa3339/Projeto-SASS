@@ -315,8 +315,8 @@ main .container .area-adicionar .entrada {
 }
 main .container .area-adicionar .entrada input {
   width: 100%;
-  border: 2px solid #ccc; /* Cor da borda */
-  border-radius: 5px; /* Bordas arredondadas */
+  border: 2px solid #ccc;
+  border-radius: 5px;
   font-size: 16px;
 }
 main .container .area-adicionar #enviar {

@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 data: tarefa.querySelector('.data p').textContent.split('/').reverse().join('-'),
                 descricao: tarefa.querySelector('.descricao p').textContent,
                 anotacoes: tarefa.querySelector('.anota p').textContent,
-                concluida: tarefa.querySelector('.checked').checked // Salvar se a tarefa está concluída
+                concluida: tarefa.querySelector('.checked').checked
             };
         });
         localStorage.setItem('tarefas', JSON.stringify(tarefas));
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     
         const checkbox = novaTarefa.querySelector('.checked');
-        checkbox.addEventListener('change', salvarTarefas); // Salvar alterações quando a tarefa for marcada ou desmarcada
+        checkbox.addEventListener('change', salvarTarefas);
     
         reorganizarTarefas();
     
@@ -133,8 +133,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Função para trocar o tema
     const checkbox = document.getElementById('meuCheckbox');
-
     document.addEventListener('DOMContentLoaded', function() {
         if (checkbox.checked) {
             document.body.classList.add('theme-light');
@@ -142,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.classList.add('theme-dark');
         }
     });
-    
     checkbox.addEventListener('change', function() {
         if (!checkbox.checked) {
             document.body.classList.remove('theme-dark');
