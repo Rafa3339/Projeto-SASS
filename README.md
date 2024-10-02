@@ -1,5 +1,7 @@
 # Tarefas Em Dia
 [Site](https://tarefasemdia.netlify.app/) que ajuda com a organização da suas tarefas diárias
+# Integrantes
+- Rafael Rocha Almeida, Talles Cardoso Ornelas, Vinícius Amaral Costa, Jéferson Ramos Fonseca, Alan Lucas De Souza e Matheus Jorge Miranda Peixoto.
 # Softwares / Ferramentas
 - Para instalar o Sass em seu computador voce pode seguir o tutorial no [site](https://sass-lang.com/install/) oficial do  Sass
 - Usamos a [extensão](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass) do [visual studio code](https://code.visualstudio.com/download) para usar o Sass, pois é bem mais simples de instalar e usar.
