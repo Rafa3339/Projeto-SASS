@@ -12,6 +12,7 @@
 @import './header';
 
 // O mixin é como uma função pronta com propriedades que pode ser chamada depois (148)
+// o mixin aceita parametros
 @mixin flexCenter(){
     display: flex;
     justify-content: center;
